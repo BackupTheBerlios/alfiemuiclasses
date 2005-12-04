@@ -1,0 +1,191 @@
+## version $VER: Calendar.catalog 5.0 (27.7.2005)
+## codeset 0
+## language italiano
+;
+; CATCOMP Calendar.cd Calendar_ita.ct NOOPTIM CATALOG Locale:Catalogs/Italiano/Calendar.catalog
+;
+Msg_DaysNames_Title
+Nomi giorni
+; Days names
+;
+Msg_Days_Title
+giorni
+; Days
+;
+Msg_DaysNamesTextPen
+Testo
+; Text
+;
+Msg_DaysNamesTextPen_Title
+Penna nome giorni
+; Days names pen
+;
+Msg_DaysNamesTextPen_Help
+Il colore della penna per i nomi dei giorni.
+; The color of the pen used\nto render the days names.
+;
+Msg_DaysNamesBackground
+Sfondo
+; Background
+;
+Msg_DaysNamesBackground_Title
+Sfondo nomi giorni
+; Days names background
+;
+Msg_DaysNamesBackground_Help
+Lo sfondo per i nomi dei giorni.
+; The background for the days names.
+;
+Msg_DaysNamesDetailPen
+Dettagli
+; Detail
+;
+Msg_DaysNamesDetailPen_Title
+Penna dettagli nomi giorni
+; Days names fill pen
+;
+Msg_DaysNamesDetailPen_Help
+Il colore della penna per i dettagli\n\
+dei nomi dei giorni.
+; The color of the pen used to\nrender the days names details.
+;
+Msg_DaysBackground
+Sfondo
+; Background
+;
+Msg_DaysBackground_Title
+Sfondo giorni
+; Days background
+;
+Msg_DaysBackground_Help
+Lo sfondo dei giorni.
+; The background for the days.
+;
+Msg_DaysTextPen
+Testo
+; Text
+;
+Msg_DaysTextPen_Title
+Penna testo giorni
+; Days detail pen
+;
+Msg_DaysTextPen_Help
+Il colore per la penna penna testo dei giorni.
+; The color of the pen used\nto render the days.
+;
+Msg_DaysShinePen
+Luce
+; Shine
+;
+Msg_DaysShinePen_Title
+Penna luce giorni
+; Days shine pen
+;
+Msg_DaysShinePen_Help
+Il colore per la penna luce dei giorni.
+; The color of the pen used\nto render the selected day.
+;
+Msg_DaysFillPen
+Riempi
+; Fill
+;
+Msg_DaysFillPen_Title
+Penna riempi giorni
+; Days fill pen
+;
+Msg_DaysFillPen_Help
+Il colore dello sfondo\n\
+dei giorni selezionati.
+; The color of the pen used to render\nthe background of the selected day.
+;
+Msg_SundaysPen
+Domeniche
+; Sundays
+;
+Msg_SundaysPen_Title
+Penna domeniche
+; Holidays pen
+;
+Msg_SundaysPen_Help
+Il colore delle domeniche.
+; The color of the pen used\nto render holidays day.
+;
+Msg_AnniversaryPen
+Anniversari
+; Anniversaries
+;
+Msg_AnniversaryPen_Title
+Penna anniversari
+; Anniversaries pen
+;
+Msg_AnniversaryPen_Help
+Il colore degli anniversari.
+; The color of the pen used\nto render anniversaries.
+;
+Msg_UseDaysNamesBackground_Help
+Se impostato, la penna sfondo\n\
+dei nomi dei giorni è usata.
+; If selected the days names background\nis used.
+;
+Msg_UseDaysBackground_Help
+Se impostato, lo sfondo dei giorni è usato.
+; If selected the days background\nis used.
+;
+Msg_UseDaysFillPen_Help
+Se impostato, la penna riempi\n\
+dei giorni è usata.
+; If selected the days\nfill pen is used.
+;
+Msg_UseDaysNamesBackground
+Usa
+; Use days names background
+;
+Msg_UseDaysBackground
+Usa
+; Use days background
+;
+Msg_UseDaysFillPen
+Usa
+; Use days fill
+;
+Msg_Font
+Caratteri
+; Font
+;
+Msg_Font_Help
+I caratteri da usare per i giorni.
+; The font used to render days.
+;
+Msg_WeekStartDay
+La settimana inizia con:
+; Your week starts with:
+;
+Msg_WeekStartDay_Help
+Il giorni con cui inizia la settimana.
+; The day your week starts with.\nIt is taken from the system by default,\nbut it may sometimes be wrong.
+;
+Msg_Info_First
+%s\nCopyright 2004-2005 Alfonso Ranieri.
+; %s\nCopyright 2004-2005 by Alfonso Ranieri.
+;
+Msg_Info_Reserved
+Tutti i diritti sono riservati.
+; All Rights are Reserved.
+;
+Msg_Info_Rest
+Scrivi ad <alforan@tin.it> per informazioni\n\
+sulla programmazione ed i termini d'uso.
+; Please write to <alforan@tin.it> for\ndevelopers docs and licensing terms.
+;
+Msg_Info_Translator
+
+; 
+;
+Msg_Sample_Sample
+Esempio
+; Sample
+;
+Msg_Sample_WinTitle
+Esempio Calendar
+; Calendar example
+;

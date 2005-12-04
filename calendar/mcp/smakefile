@@ -1,0 +1,53 @@
+# Calendar.mcp smake file
+
+# Target
+TARGET = Calendar.mcp
+
+# Compiler
+C_COMPILER = sc
+
+C_OPTIMIZE = OPTIMIZE OPTSCHEDULE NOOPTSIZE OPTTIME\
+OPTINLINE OPTINLOCAL OPTLOOP NOOPTALIAS OPTPEEP\
+OPTRDEPTH=5 OPTDEPTH=5 OPTCOMPLEXITY=8
+
+C_COMPILER_OPTS = PARAMS=r NOCHECKABORT NOSTACKCHECK NOSTACKEXTEND STRINGMERGE\
+COMMENTNEST IDLEN=128 IGNORE=315 IGNORE=317 INCLUDEDIR=/include\
+$(C_OPTIMIZE)
+
+# Assembler
+ASSEMBLER = a68k
+ASSEMBLER_OPTS = -iainc:
+
+# Linker
+LINKER = slink
+LINKER_OPTS = NOICONS SC SD ND
+
+# Objects
+OBJECTS = libent.o libinit.o endcode.o init.o utils.o loc.o wsd.o class.o
+
+# Libs
+LIBS = LIB:sc.lib LIB:amiga.lib LIB:debug.lib
+
+# Built file
+$(TARGET): $(OBJECTS) $(LIBS)
+
+        $(LINKER) <with <
+FROM $(OBJECTS) TO $(TARGET) LIB $(LIBS) $(LINKER_OPTS)
+<
+
+# Rules
+.c.o:
+      $(C_COMPILER) $*.c $(C_COMPILER_OPTS)
+
+.asm.o:
+      $(ASSEMBLER) $(ASSEMBLER_OPTS) $*.asm
+
+# Dependences
+libent.o:   libent.asm Calendar.mcp_rev.i
+libinit.o:  libinit.c class.h Calendar.mcp_rev.h base.h class_protos.h
+endcode.o:  endcode.asm
+init.o:     init.c class.h base.h class_protos.h
+utils.o:    utils.c class.h base.h class_protos.h
+loc.o:      loc.c class.h base.h class_protos.h
+wsd.o: 		wsd.c class.h base.h class_protos.h
+class.o:    class.c class.h base.h class_protos.h
