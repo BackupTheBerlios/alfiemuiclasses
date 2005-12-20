@@ -1,0 +1,60 @@
+# MiniMailer.mcc smake file
+
+# Target
+TARGET = MiniMailer.mcc
+
+# Compiler
+C_COMPILER = sc
+
+C_OPTIMIZE = OPTIMIZE OPTSCHEDULE NOOPTSIZE OPTTIME\
+OPTINLINE OPTLOOP NOOPTALIAS OPTPEEP\
+OPTRDEPTH=5 OPTDEPTH=5 OPTCOMPLEXITY=8\
+NOOPTINLOCAL
+#OPTINLOCAL
+
+C_COMPILER_OPTS = PARAMS=r NOCHECKABORT NOSTACKCHECK NOSTACKEXTEND STRINGMERGE\
+COMMENTNEST IDLEN=128 IGNORE=315 IGNORE=317 INCLUDEDIR=/include INCLUDEDIR=Work:Compilers/sc/MiamiInc\
+$(C_OPTIMIZE)
+
+
+# Assembler
+ASSEMBLER = a68k
+ASSEMBLER_OPTS = -iainc:
+
+# Linker
+LINKER = slink
+LINKER_OPTS = NOICONS SC SD ND
+
+# Objects
+OBJECTS = libent.o libinit.o endcode.o init.o loc.o utils.o options.o base64.o proc.o attach.o class.o
+
+# Libs
+LIBS = LIB:sc.lib LIB:amiga.lib LIB:debug.lib
+
+# Built file
+$(TARGET): $(OBJECTS) $(LIBS)
+        $(LINKER) <with <
+FROM $(OBJECTS) TO $(TARGET) LIB $(LIBS) $(LINKER_OPTS)
+<
+        avail flush
+
+# Rules
+.c.o:
+      $(C_COMPILER) $*.c $(C_COMPILER_OPTS)
+
+.asm.o:
+      $(ASSEMBLER) $(ASSEMBLER_OPTS) $*.asm
+
+# Dependences
+libent.o:     libent.asm MiniMailer.mcc_rev.i
+libinit.o:    libinit.c class.h MiniMailer.mcc_rev.h base.h class_protos.h
+endcode.o:    endcode.asm
+init.o:       init.c class.h base.h class_protos.h
+loc.o:        loc.c class.h loc.h base.h class_protos.h
+utils.o:      utils.c class.h base.h class_protos.h
+options.o:    options.c class.h base.h class_protos.h
+proc.o:       proc.c class.h http.h MiniMailer.mcc_rev.h loc.h base.h class_protos.h
+base64.o:     base64.c class.h base.h class_protos.h
+attach.o:     attach.c class.h loc.h base.h class_protos.h
+class.o:      class.c class.h http.h loc.h base.h class_protos.h
+
